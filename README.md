@@ -7,30 +7,28 @@
 It is a nestjs based template which has features already plugged in to start the rapid development of any backend project
 1. Custom Logger
 2. Swagger
-3. Passport Authentication
-4. JWt based authentication
-5. Authrization Gaurd
-6. Typeorm integration with Mariadb
-7. User entity
 8. Test component (Above implementation with examples)
 
 ## Installation
 
 ```bash
-$ npm install
+$ yarn install
 ```
 
 ## Running the app
 
 ```bash
 # development
-$ npm run start
+$ yarn run start
 
 # watch mode
-$ npm run start:dev
+$ yarn run start:dev
 
 # production mode
-$ npm run start:prod
+$ yarn run start:prod
+
+# build mode
+$ yarn run build
 ```
 
 ## Test
@@ -38,9 +36,6 @@ $ npm run start:prod
 ```bash
 # unit tests
 $ npm run test
-
-# e2e tests
-$ npm run test:e2e
 
 # test coverage
 $ npm run test:cov
@@ -51,6 +46,5 @@ $ npm run test:cov
 - Author - [Sandeep Ghosh](http://sandeepghosh.com)
 
 ## License
-
   Nest is [MIT licensed](LICENSE).
-# nestjs-defacto-backend-template
+

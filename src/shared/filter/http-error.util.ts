@@ -1,6 +1,7 @@
 import { Catch, ExceptionFilter, HttpException, ArgumentsHost, HttpStatus, Logger} from '@nestjs/common'
 import { ApplicationLoggerService } from 'src/logger/logger.service'
 import { exec } from 'child_process'
+import { FailedExceptionDTO } from '../dto/response.dto'
 
 @Catch()
 export class HttpErrorFilter implements ExceptionFilter{
@@ -21,7 +22,8 @@ export class HttpErrorFilter implements ExceptionFilter{
         if(exceptionResponse.message){
             error = error ? error+' => '+exceptionResponse.message: error
         }
-        const errorResponseObject ={
+        const errorResponseObject: FailedExceptionDTO ={
+            status: false,
             code: status,
             timestamp: new Date().toLocaleString(),
             path: request.url,

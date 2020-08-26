@@ -9,7 +9,7 @@ export class AppService {
     this.appLogger.setContext('AppService')
   }
 
-  getHello(): string {
+  fetchContent(): string {
     this.appLogger.log('print hello')
     return 'Hello World!';
   }

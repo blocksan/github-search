@@ -1,0 +1,903 @@
+<!doctype html>
+<html class="no-js" lang="">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="x-ua-compatible" content="ie=edge">
+        <title>backend-service documentation</title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+
+        <link rel="icon" type="image/x-icon" href="../images/favicon.ico">
+	      <link rel="stylesheet" href="../styles/style.css">
+    </head>
+    <body>
+
+        <div class="navbar navbar-default navbar-fixed-top visible-xs">
+            <a href="../" class="navbar-brand">backend-service documentation</a>
+            <button type="button" class="btn btn-default btn-menu ion-ios-menu" id="btn-menu"></button>
+        </div>
+
+        <div class="xs-menu menu" id="mobile-menu">
+                <div id="book-search-input" role="search"><input type="text" placeholder="Type to search"></div>            <compodoc-menu></compodoc-menu>
+        </div>
+
+        <div class="container-fluid main">
+           <div class="row main">
+               <div class="hidden-xs menu">
+                   <compodoc-menu mode="normal"></compodoc-menu>
+               </div>
+               <!-- START CONTENT -->
+               <div class="content injectable">
+                   <div class="content-data">
+
+
+
+
+
+
+
+<ol class="breadcrumb">
+  <li>Injectables</li>
+  <li>ContentService</li>
+</ol>
+
+<ul class="nav nav-tabs" role="tablist">
+        <li class="active">
+            <a href="#info" role="tab" id="info-tab" data-toggle="tab" data-link="info">Info</a>
+        </li>
+        <li >
+            <a href="#source" role="tab" id="source-tab" data-toggle="tab" data-link="source">Source</a>
+        </li>
+</ul>
+
+<div class="tab-content">
+    <div class="tab-pane fade active in" id="c-info">
+        <p class="comment">
+            <h3>File</h3>
+        </p>
+        <p class="comment">
+            <code>src/content/content.service.ts</code>
+        </p>
+
+
+
+
+            <section>
+    <h3 id="index">Index</h3>
+    <table class="table table-sm table-bordered index-table">
+        <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <h6><b>Properties</b></h6>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <ul class="index-list">
+                            <li>
+                                    <span class="modifier">Private</span>
+                                <a href="#client">client</a>
+                            </li>
+                        </ul>
+                    </td>
+                </tr>
+
+                <tr>
+                    <td class="col-md-4">
+                        <h6><b>Methods</b></h6>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <ul class="index-list">
+                            <li>
+                                    <span class="modifier">Async</span>
+                                <a href="#cacheContent">cacheContent</a>
+                            </li>
+                            <li>
+                                    <span class="modifier">Async</span>
+                                <a href="#clearCache">clearCache</a>
+                            </li>
+                            <li>
+                                <a href="#constructFinalAPI">constructFinalAPI</a>
+                            </li>
+                            <li>
+                                    <span class="modifier">Async</span>
+                                <a href="#fetchContent">fetchContent</a>
+                            </li>
+                            <li>
+                                    <span class="modifier">Async</span>
+                                <a href="#fetchUserDetails">fetchUserDetails</a>
+                            </li>
+                        </ul>
+                    </td>
+                </tr>
+
+
+
+
+
+        </tbody>
+    </table>
+</section>
+
+            <section>
+    <h3 id="constructor">Constructor</h3>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+<code>constructor(appLogger: <a href="../injectables/ApplicationLoggerService.html">ApplicationLoggerService</a>, configService: ConfigService)</code>
+                    </td>
+                </tr>
+                        <tr>
+                            <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="16" class="link-to-prism">src/content/content.service.ts:16</a></div>
+                            </td>
+                        </tr>
+
+                <tr>
+                    <td class="col-md-4">
+                            <div>
+                                    <b>Parameters :</b>
+                                    <table class="params">
+                                        <thead>
+                                            <tr>
+                                                <td>Name</td>
+                                                    <td>Type</td>
+                                                <td>Optional</td>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                                <tr>
+                                                        <td>appLogger</td>
+                                                  
+                                                        <td>
+                                                                        <code><a href="../injectables/ApplicationLoggerService.html" target="_self" >ApplicationLoggerService</a></code>
+                                                        </td>
+                                                  
+                                                    <td>
+                                                            No
+                                                    </td>
+                                                    
+                                                </tr>
+                                                <tr>
+                                                        <td>configService</td>
+                                                  
+                                                        <td>
+                                                                    <code>ConfigService</code>
+                                                        </td>
+                                                  
+                                                    <td>
+                                                            No
+                                                    </td>
+                                                    
+                                                </tr>
+                                        </tbody>
+                                    </table>
+                            </div>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+</section>
+
+            <section>
+    
+    <h3 id="methods">
+        Methods
+    </h3>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="cacheContent"></a>
+                    <span class="name">
+                        <b>
+                            <span class="modifier">Async</span>
+                            cacheContent
+                        </b>
+                        <a href="#cacheContent"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+                    <span class="modifier-icon icon ion-ios-reset"></span>
+                    <code>cacheContent(key: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank">string</a>)</code>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-line">Defined in <a href="" data-line="159"
+                            class="link-to-prism">src/content/content.service.ts:159</a></div>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-description"><p>Helper method to find the already saved content if present</p>
+</div>
+
+                    <div class="io-description">
+                        <b>Parameters :</b>
+                        <table class="params">
+                            <thead>
+                                <tr>
+                                    <td>Name</td>
+                                    <td>Type</td>
+                                    <td>Optional</td>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>key</td>
+                                    <td>
+                                                <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank" >string</a></code>
+                                    </td>
+
+                                    <td>
+                                        No
+                                    </td>
+
+
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <div>
+                    </div>
+                    <div class="io-description">
+                        <b>Returns : </b>    <code>Promise&lt;IGenericSuccessResponse | IGenericFailureResponse&gt;</code>
+
+                    </div>
+                    <div class="io-description">
+                        
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="clearCache"></a>
+                    <span class="name">
+                        <b>
+                            <span class="modifier">Async</span>
+                            clearCache
+                        </b>
+                        <a href="#clearCache"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+                    <span class="modifier-icon icon ion-ios-reset"></span>
+                    <code>clearCache()</code>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-line">Defined in <a href="" data-line="244"
+                            class="link-to-prism">src/content/content.service.ts:244</a></div>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-description"><p>API to clear the cache from REDIS</p>
+</div>
+
+                    <div>
+                    </div>
+                    <div class="io-description">
+                        <b>Returns : </b>        <code><a href="../miscellaneous/typealiases.html#IGenericSuccessResponse" target="_self" >Promise&lt;IGenericSuccessResponse&gt;</a></code>
+
+                    </div>
+                    <div class="io-description">
+                        <p>IGenericSuccessResponse</p>
+
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="constructFinalAPI"></a>
+                    <span class="name">
+                        <b>
+                            constructFinalAPI
+                        </b>
+                        <a href="#constructFinalAPI"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>constructFinalAPI(params: <a href="../classes/ContentPaginatedDto.html">ContentPaginatedDto</a>)</code>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-line">Defined in <a href="" data-line="215"
+                            class="link-to-prism">src/content/content.service.ts:215</a></div>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-description"><p>Function to return final API based on the type</p>
+</div>
+
+                    <div class="io-description">
+                        <b>Parameters :</b>
+                        <table class="params">
+                            <thead>
+                                <tr>
+                                    <td>Name</td>
+                                    <td>Type</td>
+                                    <td>Optional</td>
+                                    <td>Description</td>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>params</td>
+                                    <td>
+                                                <code><a href="../classes/ContentPaginatedDto.html" target="_self" >ContentPaginatedDto</a></code>
+                                    </td>
+
+                                    <td>
+                                        No
+                                    </td>
+
+
+                                    <td>
+                                        <p>: ContentPaginatedDto  {type, searchkey, page}</p>
+
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <div>
+                    </div>
+                    <div class="io-description">
+                        <b>Returns : </b>        <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank" >string</a></code>
+
+                    </div>
+                    <div class="io-description">
+                        <p>string final API which can be used by axios </p>
+
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="fetchContent"></a>
+                    <span class="name">
+                        <b>
+                            <span class="modifier">Async</span>
+                            fetchContent
+                        </b>
+                        <a href="#fetchContent"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+                    <span class="modifier-icon icon ion-ios-reset"></span>
+                    <code>fetchContent(params: <a href="../classes/ContentPaginatedDto.html">ContentPaginatedDto</a>)</code>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-line">Defined in <a href="" data-line="41"
+                            class="link-to-prism">src/content/content.service.ts:41</a></div>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-description"><p>Function responsible for fetching the content from Github and set it in REDIS</p>
+<p>if cache found then it returns result from cache </p>
+<p>else new API request is made</p>
+</div>
+
+                    <div class="io-description">
+                        <b>Parameters :</b>
+                        <table class="params">
+                            <thead>
+                                <tr>
+                                    <td>Name</td>
+                                    <td>Type</td>
+                                    <td>Optional</td>
+                                    <td>Description</td>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>params</td>
+                                    <td>
+                                                <code><a href="../classes/ContentPaginatedDto.html" target="_self" >ContentPaginatedDto</a></code>
+                                    </td>
+
+                                    <td>
+                                        No
+                                    </td>
+
+
+                                    <td>
+                                        <p>: ContentPaginatedDto</p>
+
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <div>
+                    </div>
+                    <div class="io-description">
+                        <b>Returns : </b>    <code>Promise&lt;SuccessResponseDTO | FailedResponseDTO&gt;</code>
+
+                    </div>
+                    <div class="io-description">
+                        <p>data: SuccessResponseDTO | FailedResponseDTO</p>
+
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="fetchUserDetails"></a>
+                    <span class="name">
+                        <b>
+                            <span class="modifier">Async</span>
+                            fetchUserDetails
+                        </b>
+                        <a href="#fetchUserDetails"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+                    <span class="modifier-icon icon ion-ios-reset"></span>
+                    <code>fetchUserDetails(items: Array<any>)</code>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-line">Defined in <a href="" data-line="180"
+                            class="link-to-prism">src/content/content.service.ts:180</a></div>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-description"><p>Update the details for each user returned from the search API</p>
+<p>Base search API doesn&#39;t return location, name and other information. </p>
+<p>It will update item details as &quot;call by reference&quot;</p>
+</div>
+
+                    <div class="io-description">
+                        <b>Parameters :</b>
+                        <table class="params">
+                            <thead>
+                                <tr>
+                                    <td>Name</td>
+                                    <td>Type</td>
+                                    <td>Optional</td>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>items</td>
+                                    <td>
+                                            <code>Array&lt;any&gt;</code>
+                                    </td>
+
+                                    <td>
+                                        No
+                                    </td>
+
+
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <div>
+                    </div>
+                    <div class="io-description">
+                        <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >any</a></code>
+
+                    </div>
+                    <div class="io-description">
+                        
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</section>
+            <section>
+    
+        <h3 id="inputs">
+            Properties
+        </h3>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="client"></a>
+                        <span class="name">
+                            <b>
+                                <span class="modifier">Private</span>
+                            client</b>
+                            <a href="#client"><span class="icon ion-ios-link"></span></a>
+                        </span>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                            <i>Type : </i>    <code>ClientProxy</code>
+
+                        </td>
+                    </tr>
+                        <tr>
+                            <td class="col-md-4">
+                                    <div class="io-line">Defined in <a href="" data-line="16" class="link-to-prism">src/content/content.service.ts:16</a></div>
+                            </td>
+                        </tr>
+
+
+            </tbody>
+        </table>
+</section>
+
+    </div>
+
+
+    <div class="tab-pane fade  tab-source-code" id="c-source">
+        <pre class="line-numbers compodoc-sourcecode"><code class="language-typescript">import { Injectable, Inject, HttpException, HttpStatus } from &#x27;@nestjs/common&#x27;;
+import axios from &#x27;axios&#x27;;
+import { ApplicationLoggerService } from &#x27;./../logger/logger.service&#x27;;
+import { getTotalPages } from &#x27;./../shared/utils/totalPages.util&#x27;;
+import { ContentPaginatedDto } from &#x27;./content.dto&#x27;;
+import { EContentType } from &#x27;./../shared/interfaces/EContentType&#x27;;
+import { apiUtil } from &#x27;./../shared/utils/apitype.util&#x27;;
+import { ClientProxy, ClientProxyFactory, Transport } from &#x27;@nestjs/microservices&#x27;;
+import { SuccessResponseDTO, FailedResponseDTO } from &#x27;./../../src/shared/dto/response.dto&#x27;;
+import { IGenericSuccessResponse, IGenericFailureResponse, IGenericResponse } from &#x27;src/shared/interfaces/IGenericResponse&#x27;;
+import { ConfigService } from &#x27;@nestjs/config&#x27;;
+
+@Injectable()
+export class ContentService {
+
+  private client: ClientProxy
+
+  constructor(private appLogger: ApplicationLoggerService, private configService: ConfigService) {
+    /**
+    * Setting up the logging context 
+    * useful while debugging
+    */
+    this.client &#x3D; ClientProxyFactory.create({
+      transport: Transport.REDIS, options: {
+        url: process.env.REDIS_SERVER,
+      }
+    })
+    this.appLogger.setContext(&#x27;ContentService&#x27;)
+  }
+  /**
+   * 
+   * Function responsible for fetching the content from Github and set it in REDIS
+   * 
+   * if cache found then it returns result from cache 
+   * 
+   * else new API request is made
+   * 
+   * @param params : ContentPaginatedDto
+   * @returns data: SuccessResponseDTO | FailedResponseDTO
+   */
+  async fetchContent(params: ContentPaginatedDto): Promise&lt;SuccessResponseDTO | FailedResponseDTO&gt; {
+    try {
+      const {type} &#x3D; params
+
+      /**
+       * Contruct the final api based on the type, user selected
+       */
+      let finalApi &#x3D; this.constructFinalAPI(params)
+
+      /**
+       * Utility to check for data to exist in redis or not
+       */
+      const cacheResult &#x3D; await this.cacheContent(finalApi)
+
+      /**
+       * Return the cache data which returned from REDIS
+       */
+      if (cacheResult.status) {
+        return { status: true, content: cacheResult.data };
+      }
+
+      /**
+       * If no cache found, then
+       * Make the API request to fetch the content
+       */
+
+      const result &#x3D; await axios.request({
+        method: &#x27;GET&#x27;,
+        baseURL: finalApi
+      })
+
+      /**
+       * Check for result status, if it is not 200 then API failed with exception
+       */
+      if (result.status !&#x3D;&#x3D; HttpStatus.OK) {
+        throw new Error(&quot;Request failed&quot;)
+      }
+
+      /**
+       * Destructure data from result
+       */
+      const { data } &#x3D; result;
+
+      /**
+       * If type is Users, then more details about the user needs to be fetched to show on UI
+       * Hence pass the items as call by reference and append the extra info from the user profile
+       * Note: Appending extra info done at backend to cache the request for subsequent calls 
+       */
+      if (type &#x3D;&#x3D;&#x3D; EContentType.user) {
+        await this.fetchUserDetails(data.items)
+      }
+
+      let totalPages &#x3D; 0
+      /**
+       * Github API respond with link tag if more than 1 page exists for the result.
+       * Hence to make API paginated, total number of pages should be parsed from the link tag
+       */
+      if (result.headers.link) {
+        /**
+         * Utility function to parse the link tag and return the total number of pages
+         */
+        const totalPageResult &#x3D; getTotalPages(result.headers.link)
+
+        if (!totalPageResult.status) {
+          this.appLogger.error(&#x27;Exception in finding the total pages &#x27;, totalPageResult.error)
+        }
+
+        /**
+         * Totalpages can be used by consumer to implement infinite scroll or paginated scroll
+         */
+        totalPages &#x3D; totalPageResult.pages
+      }
+
+      /**
+       * Prepare the content object which will be consumed by the endpoint
+       * 
+       */
+      const content &#x3D; { ...result.data, totalPages }
+
+      /**
+       * save the prepared content to redis using emitter pattern: fire and forget strategy
+       * Same content will be parsed from the cache 
+       */
+      this.client.emit&lt;number&gt;(&#x27;cacheContent&#x27;, { key: finalApi, data: JSON.stringify(content) })
+
+      return { status: true, content };
+    } catch (err) {
+      /**
+       * Log the error via custom logger built which will beautify the log error message
+       */
+      this.appLogger.error(&#x60;Error in Contentservice ${err}&#x60;)
+
+      /**
+       * Throw HTTP Exception which will be handled by custom HTTPErrorFilter middleware
+       * 
+       * Formatted exception will be sent to the consumer of the end point.
+       * 
+       * @example
+       * {
+       *   &quot;status&quot;: false,
+       *   &quot;error&quot;: &quot;string&quot;,
+       *   &quot;code&quot;: {},
+       *   &quot;timestamp&quot;: &quot;string&quot;,
+       *   &quot;path&quot;: &quot;string&quot;,
+       *   &quot;method&quot;: &quot;string&quot;,
+       *   &quot;requestId&quot;: &quot;string&quot;,
+       *   &quot;message&quot;: &quot;string&quot;
+       * }
+       * 
+       */
+      throw new HttpException(&#x60;Error in Contentservice ${err}&#x60;, HttpStatus.BAD_REQUEST)
+    }
+  }
+
+
+  /**
+   * Helper method to find the already saved content if present
+   */
+  async cacheContent(key: string): Promise&lt;IGenericSuccessResponse | IGenericFailureResponse&gt; {
+    return new Promise((resolve) &#x3D;&gt; {
+      this.client.send&lt;string&gt;(&#x27;fetchContent&#x27;, { key }).subscribe((data) &#x3D;&gt; {
+        if (data) {
+          resolve({ status: true, data: JSON.parse(data) })
+        }
+        resolve({ status: false })
+      }, (error) &#x3D;&gt; {
+        resolve({ status: false, error })
+      });
+    })
+  }
+
+  /**
+   * Update the details for each user returned from the search API
+   * 
+   * Base search API doesn&#x27;t return location, name and other information. 
+   * 
+   * It will update item details as &quot;call by reference&quot;
+   * @params items: Array[]
+   */
+  async fetchUserDetails(items: Array&lt;any&gt;) {
+    /**
+     * Set authorized token if present
+     */
+    const token &#x3D; this.configService.get(&quot;AUTH_TOKEN&quot;)
+    let headers &#x3D; {
+      &#x27;User-Agent&#x27;: &#x27;github-searcher&#x27;
+    }
+    if (token) {
+      headers[&#x27;Authorization&#x27;] &#x3D; &#x60;token ${token}&#x60;
+    }
+    await Promise.all(
+      items.map(async (item) &#x3D;&gt; {
+        try {
+          const profile &#x3D; await axios.request({
+            method: &#x27;GET&#x27;,
+            baseURL: item.url,
+            headers: {
+              ...headers
+            }
+          })
+          item.detailInfo &#x3D; profile.data
+        } catch (err) {
+          throw new Error(err.message)
+        }
+      })
+    )
+  }
+
+
+  /**
+   * Function to return final API based on the type
+   * @param params: ContentPaginatedDto  {type, searchkey, page}
+   * @returns string final API which can be used by axios 
+   */
+  constructFinalAPI(params: ContentPaginatedDto): string{
+      const {type, searchkey, page} &#x3D; params;
+      if (type &#x3D;&#x3D;&#x3D; EContentType.user) {
+        /**
+         * Users
+         */
+        let finalApi &#x3D; apiUtil[type]
+        return finalApi +&#x3D; &#x60;?q&#x3D;${searchkey}+type:user&amp;page&#x3D;${parseInt(page)}&#x60;
+      } else if (type &#x3D;&#x3D;&#x3D; EContentType.respository) {
+        /**
+        * Repositories
+        */
+        let finalApi &#x3D; apiUtil[type]
+        return finalApi +&#x3D; &#x60;?q&#x3D;${searchkey}&amp;page&#x3D;${parseInt(page)}&#x60;
+      } else {
+        /**
+         * If neither Users nor Repositories, 
+         * then search should not work as per the scope, hence throw exception
+         */
+        throw new Error(&quot;Type must be valid either Users or Repositories&quot;)
+      }
+  }
+
+  /**
+   * 
+   * API to clear the cache from REDIS
+   * 
+   * @returns IGenericSuccessResponse
+   */
+  async clearCache(): Promise&lt;IGenericSuccessResponse&gt; {
+    this.client.emit&lt;string&gt;(&#x27;clearCache&#x27;, {})
+    return { status: true, data: null }
+  }
+
+}
+</code></pre>
+    </div>
+
+</div>
+
+
+
+
+
+
+
+                   
+
+
+
+
+                   </div><div class="search-results">
+    <div class="has-results">
+        <h1 class="search-results-title"><span class='search-results-count'></span> result-matching "<span class='search-query'></span>"</h1>
+        <ul class="search-results-list"></ul>
+    </div>
+    <div class="no-results">
+        <h1 class="search-results-title">No results matching "<span class='search-query'></span>"</h1>
+    </div>
+</div>
+</div>
+               <!-- END CONTENT -->
+           </div>
+       </div>
+
+       <script>
+            var COMPODOC_CURRENT_PAGE_DEPTH = 1;
+            var COMPODOC_CURRENT_PAGE_CONTEXT = 'injectable';
+            var COMPODOC_CURRENT_PAGE_URL = 'ContentService.html';
+            var MAX_SEARCH_RESULTS = 15;
+       </script>
+
+       <script src="../js/libs/custom-elements.min.js"></script>
+       <script src="../js/libs/lit-html.js"></script>
+       <!-- Required to polyfill modern browsers as code is ES5 for IE... -->
+       <script src="../js/libs/custom-elements-es5-adapter.js" charset="utf-8" defer></script>
+       <script src="../js/menu-wc.js" defer></script>
+
+       <script src="../js/libs/bootstrap-native.js"></script>
+
+       <script src="../js/libs/es6-shim.min.js"></script>
+       <script src="../js/libs/EventDispatcher.js"></script>
+       <script src="../js/libs/promise.min.js"></script>
+       <script src="../js/libs/zepto.min.js"></script>
+
+       <script src="../js/compodoc.js"></script>
+
+       <script src="../js/tabs.js"></script>
+       <script src="../js/menu.js"></script>
+       <script src="../js/libs/clipboard.min.js"></script>
+       <script src="../js/libs/prism.js"></script>
+       <script src="../js/sourceCode.js"></script>
+          <script src="../js/search/search.js"></script>
+          <script src="../js/search/lunr.min.js"></script>
+          <script src="../js/search/search-lunr.js"></script>
+          <script src="../js/search/search_index.js"></script>
+       <script src="../js/lazy-load-graphs.js"></script>
+
+
+    </body>
+</html>

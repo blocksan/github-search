@@ -3,7 +3,6 @@ import {
     Injectable,
     NestInterceptor,
     ExecutionContext,
-    Logger,
     CallHandler,
 } from '@nestjs/common';
 import { Observable } from 'rxjs';
