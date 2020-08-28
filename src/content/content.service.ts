@@ -6,10 +6,10 @@ import { ContentPaginatedDto } from './content.dto';
 import { EContentType } from './../shared/interfaces/EContentType';
 import { apiUtil } from './../shared/utils/apitype.util';
 import { ClientProxy, ClientProxyFactory, Transport } from '@nestjs/microservices';
-import { SuccessResponseDTO, FailedResponseDTO } from './../../src/shared/dto/response.dto';
+import { SuccessResponseDTO, FailedResponseDTO, IContent } from './../../src/shared/dto/response.dto';
 import { IGenericSuccessResponse, IGenericFailureResponse, IGenericResponse } from 'src/shared/interfaces/IGenericResponse';
 import { ConfigService } from '@nestjs/config';
-
+import { formatItemResponse } from './../shared/utils/formatItemResponse';
 /**
  * Content service responsible for performing
  */
@@ -53,15 +53,13 @@ export class ContentService {
       /**
        * Utility to check for data to exist in redis or not
        */
-      console.log(finalApi)
       const cacheResult = await this.cacheContent(finalApi)
-      console.log("OUTPUT: ContentService -> cacheResult", cacheResult)
       
       /**
        * Return the cache data which returned from REDIS
        */
       if (cacheResult.status) {
-        return { status: true, content: cacheResult.data };
+        return { status: true, content: {...cacheResult.data } as IContent};
       }
 
       /**
@@ -77,7 +75,7 @@ export class ContentService {
       /**
        * Check for result status, if it is not 200 then API failed with exception
        */
-      if (result.status !== HttpStatus.OK) {
+      if (result.status !== HttpStatus.OK || !result.data.items) {
         throw new Error("Request failed")
       }
 
@@ -120,6 +118,7 @@ export class ContentService {
        * Prepare the content object which will be consumed by the endpoint
        * 
        */
+      result.data.items = formatItemResponse(result.data.items, type)
       const content = { ...result.data, totalPages }
 
       /**
