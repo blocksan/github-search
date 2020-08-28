@@ -64,7 +64,7 @@ Features included in this backend service
   - Option 3 : Building the docker images from local code 
 ## Installation
 
-#### Option 1  Running project locally
+#### Option 1:  Running project locally
 * NPM/Node should be preinstalled in the host machine
 * Redis should be installed and running in the host machine
 * Please add **github auth token** to make more than the limited github calls 
@@ -104,7 +104,7 @@ Test
 $ yarn run test
 ```
 
-#### Option 2  Running project via docker images
+#### Option 2:  Running project via docker images
 To run the project using docker please use the ***docker-compose.deploy.yml*** provided with the project
 Follow the below steps to run the application
 1. Create ***.env*** for frontend container and add values
@@ -119,7 +119,7 @@ Open [http://host_ip:8000](http://localhost:8000) to view APP documentationin th
 Open [http://host_ip:9000](http://localhost:9000) to view REDIS Microservice documentation in the browser
 Open [http://host_ip/api/swagger](http://localhost/api/gitswagger) to view swagger documentation in the browser
 
-#### Option 3  Running project via docker images
+#### Option 3:  Running project via docker images
 ```
 git clone https://github.com/blocksan/github-search.git
 
