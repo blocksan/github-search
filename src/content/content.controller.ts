@@ -1,14 +1,13 @@
-import { Controller, Post, Query, Delete, Body } from "@nestjs/common";
+import { Controller, Post, Delete, Body } from "@nestjs/common";
 import { ContentService } from "./content.service";
 import {
     ApiOperation,
     ApiResponse,
     ApiTags
 } from '@nestjs/swagger';
-import { ApplicationLoggerService } from "./../logger/logger.service";
 import { ContentPaginatedDto } from "./content.dto";
 import { SuccessResponseDTO, FailedResponseDTO, FailedExceptionDTO } from "./../shared/dto/response.dto";
-import { IGenericSuccessResponse } from "src/shared/interfaces/IGenericResponse";
+import { IGenericSuccessResponse } from "./../shared/interfaces/IGenericResponse";
 
 /**
  * Content controller responsible for handling routes related to content
@@ -17,13 +16,7 @@ import { IGenericSuccessResponse } from "src/shared/interfaces/IGenericResponse"
 @Controller('content')
 export class ContentController {
 
-    constructor(private appLogger: ApplicationLoggerService, private contentService: ContentService) {
-        /**
-        * Setting up the logging context 
-        * 
-        * useful while debugging
-        */
-        this.appLogger.setContext('ContentController')
+    constructor(private contentService: ContentService) {
     }
     /**
      * 

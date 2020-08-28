@@ -1,4 +1,4 @@
-import { Injectable, Inject, HttpException, HttpStatus } from '@nestjs/common';
+import { Injectable, HttpException, HttpStatus } from '@nestjs/common';
 import axios from 'axios';
 import { ApplicationLoggerService } from './../logger/logger.service';
 import { getTotalPages } from './../shared/utils/totalPages.util';
@@ -7,7 +7,7 @@ import { EContentType } from './../shared/interfaces/EContentType';
 import { apiUtil } from './../shared/utils/apitype.util';
 import { ClientProxy, ClientProxyFactory, Transport } from '@nestjs/microservices';
 import { SuccessResponseDTO, FailedResponseDTO, IContent } from './../../src/shared/dto/response.dto';
-import { IGenericSuccessResponse, IGenericFailureResponse, IGenericResponse } from 'src/shared/interfaces/IGenericResponse';
+import { IGenericSuccessResponse, IGenericFailureResponse } from './../shared/interfaces/IGenericResponse';
 import { ConfigService } from '@nestjs/config';
 import { formatItemResponse } from './../shared/utils/formatItemResponse';
 /**
