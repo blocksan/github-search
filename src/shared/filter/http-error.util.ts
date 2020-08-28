@@ -3,6 +3,10 @@ import { ApplicationLoggerService } from 'src/logger/logger.service'
 import { exec } from 'child_process'
 import { FailedExceptionDTO } from '../dto/response.dto'
 
+/**
+ * Custom HttpErrorFilter to catch all the exception across the application
+ * This will return the formatted exception.
+ */
 @Catch()
 export class HttpErrorFilter implements ExceptionFilter{
 

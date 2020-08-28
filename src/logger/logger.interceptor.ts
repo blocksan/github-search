@@ -9,6 +9,9 @@ import { Observable } from 'rxjs';
 import { tap } from 'rxjs/operators';
 import { ApplicationLoggerService } from './logger.service';
 
+/**
+ * Custom injectable interception which will print the time taken by the API to respond 
+ */
 @Injectable()
 export class LoggerInterceptor implements NestInterceptor {
 
