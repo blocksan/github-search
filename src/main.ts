@@ -4,7 +4,6 @@ import { SwaggerModule, DocumentBuilder } from '@nestjs/swagger';
 import { Logger, ValidationPipe } from '@nestjs/common';
 import { ConfigService } from '@nestjs/config';
 import { ApplicationLoggerService } from './logger/logger.service';
-import { Transport } from '@nestjs/microservices';
 
 async function bootstrap() {
   /**
@@ -51,7 +50,7 @@ async function bootstrap() {
    */
   const port = configService.get('APP_PORT')
   await app.listen(port,() => {
-    Logger.log(`Service started at ${port} port`)
+    Logger.log(`Github Searcher Service started at ${port} port`)
   });
   
 }

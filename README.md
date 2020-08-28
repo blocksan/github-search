@@ -4,7 +4,6 @@
 
 ## Description
 
-It is a nestjs based template which has features already plugged in to start the rapid development of any backend project
 1. Custom Logger
 2. Swagger
 8. Test component (Above implementation with examples)
@@ -47,4 +46,3 @@ $ npm run test:cov
 
 ## License
   Nest is [MIT licensed](LICENSE).
-

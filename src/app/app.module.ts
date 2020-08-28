@@ -12,6 +12,9 @@ import { AppService } from './app.service';
 import { ContentService } from 'src/content/content.service';
 import { ContentModule } from 'src/content/content.module';
 
+/**
+ * Appmodule responsible for injecting all the middlewares and config modules
+ */
 @Module({
   imports: [ApplicationLoggerModule, ContentModule, ConfigModule.forRoot({
     isGlobal: true,

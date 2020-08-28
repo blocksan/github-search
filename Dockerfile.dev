@@ -1,4 +1,3 @@
-
 # This is a github searcher backend docker build
 # This will serve all API endpoints
 # Using node:10 alpine as base image
@@ -13,9 +12,7 @@ RUN yarn install
 
 ADD . /app
 
-RUN yarn run build
-
 EXPOSE 3001
 
-#serves the content from dist folder
-CMD ["yarn", "run", "start:prod"]
+#start the service in dev mode
+CMD ["yarn", "run", "start:dev"]

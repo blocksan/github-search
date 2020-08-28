@@ -1,0 +1,20 @@
+
+# This is a documentation docker build
+# This will serve the compodoc generated files
+# Using node:10 alpine as base image
+
+FROM node:10-alpine as builder
+
+WORKDIR /app
+
+ADD package.json /app/package.json
+
+RUN yarn install
+
+ADD . /app
+
+EXPOSE 8080
+
+#yarn run doc will run script from package.json
+#It is going to build and serve the documention on 8080
+CMD ["yarn","run","doc"]
