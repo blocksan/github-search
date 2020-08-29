@@ -58,6 +58,9 @@ Features included in this backend service
 #### Compodoc Documentation snapshot
 [![dPYCxf.md.png](https://iili.io/dPYCxf.md.png)](https://freeimage.host/i/dPYCxf)
 
+#### Test Cases
+[![diBbX1.md.png](https://iili.io/diBbX1.md.png)](https://freeimage.host/i/diBbX1)
+
 ## How to run this application
   - Option 1 : Github way of cloning repositories 
   - Option 2 : Directly building the application from docker-hub
