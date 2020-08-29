@@ -107,7 +107,7 @@ $ yarn run test
 #### Option 2:  Running project via docker images
 To run the project using docker please use the ***docker-compose.deploy.yml*** provided with the project
 Follow the below steps to run the application
-1. Create ***.env*** for frontend container and add values
+1. Create ***frontend.env*** for frontend container and add values
 2. Create ***app.env*** for APP container and add relevant values
 3. Create ***microservice.env*** for REDIS Microservice container and add relevant values.
 ```
