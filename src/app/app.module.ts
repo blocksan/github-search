@@ -6,7 +6,6 @@ import { HttpErrorFilter } from 'src/shared/filter/http-error.util';
 import { LoggerInterceptor } from 'src/logger/logger.interceptor';
 import { ReqestMiddleware } from 'src/shared/middlewares';
 import { ConfigModule } from '@nestjs/config';
-import { dbconfig } from 'src/shared/config/database.config';
 import { ContentController } from 'src/content/content.controller';
 import { AppService } from './app.service';
 import { ContentService } from 'src/content/content.service';
@@ -16,9 +15,8 @@ import { ContentModule } from 'src/content/content.module';
  * Appmodule responsible for injecting all the middlewares and config modules
  */
 @Module({
-  imports: [ApplicationLoggerModule, ContentModule, ConfigModule.forRoot({
-    isGlobal: true,
-    load: [dbconfig]
+  imports: [ApplicationLoggerModule, ContentModule,ConfigModule.forRoot({
+    isGlobal: true
   })],
   controllers: [AppController, ContentController],
   providers: [AppService, ContentService, {

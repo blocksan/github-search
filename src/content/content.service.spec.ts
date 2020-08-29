@@ -5,6 +5,7 @@ import { ApplicationLoggerService } from './../../src/logger/logger.service';
 import { ContentPaginatedDto } from './content.dto';
 import { EContentType } from './../../src/shared/interfaces/EContentType';
 import { IGenericSuccessResponse } from './../../src/shared/interfaces/IGenericResponse';
+import { ConfigService } from '@nestjs/config';
 
 describe('Content Service', () => {
     let contentController: ContentController;
@@ -12,9 +13,9 @@ describe('Content Service', () => {
     let loggerService: ApplicationLoggerService;
     beforeEach(async () => {
         const content: TestingModule = await Test.createTestingModule({
-            imports: [ApplicationLoggerService],
+            imports: [],
             controllers: [ContentController],
-            providers: [ContentService],
+            providers: [ContentService, ApplicationLoggerService, ConfigService],
         }).compile();
 
         loggerService = await content.resolve(ApplicationLoggerService)
@@ -34,9 +35,12 @@ describe('Content Service', () => {
         });
 
         it('It should throw error if valid type not passed', async () => {
-            const responseDto = { status: false, error: "Type must be valid either Users or Repositories" };
             const query = { page: "1", type: "random", searchkey: "abc" }
-            expect(await contentService.fetchContent(query as any)).toEqual(responseDto)
+            try{
+                await contentService.fetchContent(query as any)
+            }catch(err){
+                expect(err.message).toBe('Error in Contentservice Error: Type must be valid either Users or Repositories')
+            }
         });
 
         it('It should fetch the content from REDIS', async () => {

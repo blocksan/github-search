@@ -1,27 +1,25 @@
 import { Test, TestingModule } from '@nestjs/testing';
 import { ContentController } from './content.controller';
 import { ContentService } from './content.service';
-// import { ApplicationLoggerService } from './../../src/logger/logger.service';
-// import { ApplicationLoggerModule } from './../../src/logger/logger.module';
+import { ApplicationLoggerService } from './../../src/logger/logger.service';
 import { SuccessResponseDTO, FailedResponseDTO } from './../../src/shared/dto/response.dto';
 import { ContentPaginatedDto } from './content.dto';
 import { EContentType } from './../../src/shared/interfaces/EContentType';
-// import { ApplicationLoggerService } from './../../src/logger/logger.service';
-// import { LoggerService } from '@nestjs/common';
+import { ConfigService } from '@nestjs/config';
 
 describe('Content Controller', () => {
   let contentController: ContentController;
   let contentService : ContentService;
-  // let loggerService: ApplicationLoggerService;
+  let loggerService: ApplicationLoggerService;
   beforeEach(async () => {
     const content: TestingModule = await Test.createTestingModule({
       imports:[],
       controllers: [ContentController],
-      providers: [ContentService],
+      providers: [ContentService,ApplicationLoggerService, ConfigService],
     }).compile();
 
-    // loggerService = await content.resolve(ApplicationLoggerService)
-    contentService = await content.get<ContentService>(ContentService)
+    loggerService = await content.resolve(ApplicationLoggerService)
+    contentService = content.get<ContentService>(ContentService)
     contentController = content.get<ContentController>(ContentController);
   });
 
@@ -44,7 +42,7 @@ describe('Content Controller', () => {
   });
   describe('Clear Content', () => {
     it('It should clear the content and return status true', async () => {
-      const result = {status: true};
+      const result = {status: true, data: null};
       jest.spyOn(contentService, 'clearCache').mockImplementation(() => Promise.resolve({status: true, data:null}));
       expect(await contentController.clearContent()).toEqual(result)
     });

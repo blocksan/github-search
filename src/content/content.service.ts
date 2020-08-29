@@ -71,7 +71,6 @@ export class ContentService {
         method: 'GET',
         baseURL: finalApi
       })
-
       /**
        * Check for result status, if it is not 200 then API failed with exception
        */
